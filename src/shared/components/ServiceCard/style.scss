@@ -1,0 +1,25 @@
+@use '../../../assets/sass/variables';
+
+.service-card{
+    width: 10vw;
+    margin: 10px;
+    box-sizing: border-box;
+
+    img{
+        width: 100%;
+        object-fit: cover;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+    h3{
+        font-size: 13px;
+    }
+    p{
+        font-size: 12px;
+    }
+    button{
+        border: none;
+        background-color: transparent;
+        padding: 0;
+    }
+}

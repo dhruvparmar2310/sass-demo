@@ -1,0 +1,111 @@
+@use '../../../assets/sass/variables';
+
+.hero{
+    width: 100%;
+    background-image: url('https://media.istockphoto.com/id/1310587304/photo/wood-table-green-wall-background-with-sunlight-window-create-leaf-shadow-on-wall-with-blur.jpg?s=170667a&w=0&k=20&c=vcPl8SyUmQkdiWx3XHO-LCc14jbgcwJuU0LhC-xKfew=');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+
+    &-content{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 0 50px;
+
+        h1{
+            color: variables.$whiteColor;
+            font-size: 65px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin: 0;
+            font-family: variables.$title;
+            letter-spacing: 0.5mm;
+
+            @include variables.for-phone-only{
+                font-size: 30px;
+            }
+
+            @include variables.for-small-phone-only{
+                font-size: 30px;
+            }
+        }
+
+        p{
+            color: variables.$whiteColor;
+            font-size: 15px;
+            margin: 0;
+            font-family: variables.$title;
+
+            &::selection{
+                background-color: variables.$bg-color;
+            }
+            @include variables.for-phone-only{
+                font-size: 12px;
+                letter-spacing: 0.2mm;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            @include variables.for-small-phone-only{
+                font-size: 10px;
+                letter-spacing: 0.2mm;
+                display: flex;
+                flex-wrap: wrap;
+                text-align: end;
+            }
+        }
+
+        button{
+            margin: 10px 0;
+            @include variables.buyNow-btn(2px, variables.$bg-color, variables.$bg-color, 8px, 15px, 5px);
+            color: variables.$whiteColor;
+            font-weight: 800;
+            transition: 0.5s ease-in-out;
+            cursor: pointer;
+
+            &:hover{
+                @include variables.buyNow-btn(2px, variables.$bg-color, variables.$whiteColor, 8px, 15px, 5px);
+                color: variables.$blackColor;
+                transform: translateY(-5px);
+
+                @include variables.for-phone-only{
+                    font-size: 10px;
+                    @include variables.buyNow-btn(2px, variables.$bg-color, variables.$whiteColor, 5px, 10px, 5px);
+                }
+                @include variables.for-small-phone-only{
+                    font-size: 10px;
+                    @include variables.buyNow-btn(2px, variables.$bg-color, variables.$whiteColor, 5px, 10px, 5px);
+                }
+            }
+
+            @include variables.for-phone-only{
+                font-size: 10px;
+                @include variables.buyNow-btn(2px, variables.$bg-color, variables.$bg-color, 5px, 10px, 5px);
+            }
+            @include variables.for-small-phone-only{
+                font-size: 10px;
+                @include variables.buyNow-btn(2px, variables.$bg-color, variables.$bg-color, 5px, 10px, 5px);
+            }
+        }
+
+        @include variables.for-phone-only{
+            padding: 0 15px;
+        }
+        @include variables.for-small-phone-only{
+            padding: 0 10px;
+        }
+    }
+
+    @include variables.for-phone-only{
+        height: 35vh;
+    }
+    @include variables.for-small-phone-only{
+        height: 35vh;
+    }
+}

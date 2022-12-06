@@ -1,0 +1,99 @@
+@use '../../../assets/sass/variables';
+
+.card{
+    width: 15%;
+    border: none;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    transition: 0.3s ease-in-out;
+
+    &-logo{
+        display: flex;
+        justify-content: center;
+        font-size: 35px;
+        margin: 0;
+        
+        svg{     
+            color: variables.$bg-color;
+
+            &:hover{
+                color: variables.$whiteColor;
+            }
+        }
+
+        @include variables.for-phone-only {
+            display: flex;
+            justify-content: center;
+            font-size: 35px;
+            margin: 0;
+        }
+        
+        @include variables.for-small-phone-only {
+            display: flex;
+            justify-content: center;
+            font-size: 35px;
+            margin: 0;
+        }
+    }
+    &-title{
+        display: flex;
+        justify-content: center;
+
+        @include variables.for-phone-only {
+            font-size: 13px;
+            display: flex;
+            justify-content: center;
+            font-weight: 600;
+        }
+        
+        @include variables.for-small-phone-only {
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            font-weight: 500;
+        }
+    }
+    &-desc{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 13px;
+
+        @include variables.for-phone-only {
+            font-size: 10px;
+            font-weight: 500;
+        }
+        
+        @include variables.for-small-phone-only {
+            font-size: 12px;
+            font-weight: 500;
+        }
+    }
+
+    &:hover{
+        background-color: variables.$bg-color;
+        transform: translateY(-10px);
+        @include variables.boxShadow(0, 10px, 30px, #888);
+        color: variables.$whiteColor;
+    }
+
+    @include variables.for-phone-only {
+        width: 50%;
+        border: none;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 10px;
+        transition: 0.3s ease-in-out;
+    }
+    
+    @include variables.for-small-phone-only {
+        width: 60%;
+        border: none;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 20px;
+        transition: 0.3s ease-in-out;
+    }
+}
+

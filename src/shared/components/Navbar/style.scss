@@ -1,0 +1,135 @@
+@use '../../../assets/sass/variables';
+
+.navbar{
+    width: 100%;
+    background-color: variables.$whiteColor;
+    @include variables.boxShadow(0, 0, 10px, #000); // to use mixin function we need to write @include
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-sizing: border-box;
+
+    @include variables.for-phone-only{
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    @include variables.for-small-phone-only{
+        flex-wrap: wrap;
+        width: 100vw;
+    }
+
+    &-logo{
+        width: 30%;
+        padding: 10px 50px;
+
+        @include variables.for-phone-only{
+            width: 100%;
+            padding-bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @include variables.for-small-phone-only{
+            width: 100%;
+            padding-bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img{
+            width: 50px;
+            height: 50px;
+        }
+    }
+    
+    &-links{
+        width: 70%;
+        padding: 10px 50px;
+        box-sizing: border-box;
+
+        ul{
+            display: flex;
+            list-style: none;
+            justify-content: end;
+            align-items: center;
+            padding: 0;
+
+            @include variables.for-phone-only{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            @include variables.for-small-phone-only{
+                flex-wrap: wrap;
+                width: 100%;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        li{
+            @include variables.for-small-phone-only{
+                flex-wrap: wrap;
+                width: 100%;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        a{
+            text-decoration: none;
+            padding: 13px;
+            color: variables.$blackColor;
+            font-weight: 500;
+            
+            &:hover{
+                color: variables.$bg-color;
+            }
+            
+            @include variables.for-phone-only{
+                font-size: 13px;
+                padding: 10px;
+            }
+            @include variables.for-small-phone-only{
+                padding: 8px;
+            }
+        }
+        button{
+            @include variables.buyNow-btn(1px, variables.$blackColor, variables.$whiteColor, 5px, 10px, 5px);
+            color: variables.$blackColor;
+            font-weight: 500;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+            
+            @include variables.for-phone-only{
+                @include variables.buyNow-btn(1px, variables.$blackColor, variables.$whiteColor, 5px, 10px, 5px);
+                font-size: 10px;
+            }
+
+            @include variables.for-small-phone-only{
+                @include variables.buyNow-btn(1px, variables.$blackColor, variables.$whiteColor, 5px, 10px, 5px);
+                font-size: 10px;
+            }
+            
+            &:hover{
+                @include variables.buyNow-btn(1px, variables.$blackColor, variables.$blackColor, 5px, 10px, 5px);
+                color: variables.$whiteColor;
+            }
+        }
+        
+        @include variables.for-phone-only{
+            width: 100%;
+        }
+        @include variables.for-small-phone-only{
+            width: 100%;
+        }
+    }
+    
+}
+

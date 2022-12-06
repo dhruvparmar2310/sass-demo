@@ -1,0 +1,63 @@
+@use '../../assets/sass/variables';
+
+.intro{
+    width: 100%;
+    display: flex;
+    background-color: variables.$whiteColor;
+    padding: 10px;
+    justify-content: center;
+
+    @include variables.for-phone-only {
+        display: flex;
+        width: 100%;
+    }
+    
+    @include variables.for-small-phone-only {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
+
+.service{
+    display: flex;
+    padding: 30px 50px;
+    background-color: variables.$second-bg;
+    box-sizing: border-box;
+    justify-content: center;
+
+    &-intro{
+        width: 15vw;
+        box-sizing: border-box;
+        h1{
+            font-size: 40px;
+            font-weight: 800;
+            margin: 0;
+        }
+        p{
+            font-size: 13px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        button{
+            border: none;
+            background-color: transparent;
+            padding: 0;
+            color: variables.$blackColor;
+
+            &::after{
+                content: '';
+                display: block;
+                width: 30%;
+                height: 3px;
+                margin-top: 5px;
+                border-radius: 30px;
+                background-color: variables.$bg-color;
+            }
+        }
+    }
+
+    &-category{
+        display: flex;
+    }
+}

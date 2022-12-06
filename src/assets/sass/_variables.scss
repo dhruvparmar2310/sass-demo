@@ -1,0 +1,25 @@
+$whiteColor: rgb(255, 255, 255);
+$blackColor: rgba(51, 51, 51, 0.935);
+$bg-color: #f5014e;
+$second-bg: #f8f9fc;
+$title: 'Bakbak One';
+
+@mixin boxShadow ($x-axis, $y-axis, $blur, $color) {
+    box-shadow: $x-axis $y-axis $blur $color;
+}
+
+@mixin buyNow-btn ($border, $color, $bg, $y-axis, $x-axis, $radius) {
+    border: $border solid $color;
+    background-color: $bg;
+    padding: $y-axis $x-axis;
+    border-radius: $radius;
+}
+
+// media query for phone
+@mixin for-phone-only {
+    @media (max-width: 576px) { @content; }
+}
+
+@mixin for-small-phone-only {
+    @media (max-width: 375px) { @content; }
+}
